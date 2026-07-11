@@ -1,0 +1,61 @@
+\chapter{导数与微分}
+
+\section{导数的概念}
+
+\begin{definition}[导数]
+设函数 $y=f(x)$ 在点 $x_0$ 的某邻域内有定义。若极限
+\begin{equation}
+  \lim_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}
+  \label{eq:derivative}
+\end{equation}
+存在，则称函数 $f$ 在点 $x_0$ 可导，该极限称为 $f$ 在 $x_0$ 处的导数，记为 $f'(x_0)$。
+\end{definition}
+
+\begin{theorem}[可导必连续]
+若函数 $f$ 在点 $x_0$ 可导，则 $f$ 在点 $x_0$ 连续。
+\end{theorem}
+
+\begin{proof}
+由 \cref{eq:derivative} 的极限存在，得
+\[
+  f(x_0+\Delta x)-f(x_0)
+  =
+  \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\Delta x.
+\]
+当 $\Delta x\to 0$ 时，右端趋于 $f'(x_0)\cdot 0=0$，故 $\lim_{\Delta x\to0}f(x_0+\Delta x)=f(x_0)$。
+\end{proof}
+
+\section{常用求导公式}
+
+在教材中，公式组可以使用 `align` 环境统一排版：
+\begin{align}
+  (u\pm v)' &= u'\pm v',\\
+  (uv)' &= u'v+uv',\\
+  \left(\frac{u}{v}\right)' &= \frac{u'v-uv'}{v^2}\quad (v\ne0),\\
+  \frac{\diff}{\diff x}\sin x &= \cos x.
+\end{align}
+
+\section{微分与近似}
+
+若函数 $f$ 在点 $x$ 可导，则称
+\[
+  \diff y=f'(x)\diff x
+\]
+为函数 $y=f(x)$ 在点 $x$ 处的微分。当 $\Delta x$ 较小时，有一阶近似
+\[
+  f(x+\Delta x)\approx f(x)+f'(x)\Delta x.
+\]
+
+\begin{remark}
+模板预定义了 $\diff$、$\e$、$\ii$、$\R$、$\N$、\verb|\norm{}| 等常用数学命令，可按学科需要继续扩展。
+\end{remark}
+
+\section{本章习题}
+
+\begin{exercise}
+求函数 $f(x)=x^x$ 在 $x>0$ 时的导数。
+\end{exercise}
+
+\begin{exercise}
+利用微分估算 $\sqrt{4.04}$ 的值。
+\end{exercise}

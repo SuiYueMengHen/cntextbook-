@@ -1,0 +1,88 @@
+\chapter{函数、极限与连续}
+
+\section{函数与映射}
+
+教材正文应尽量保持叙述简洁、层次清楚。中文段落首行缩进两个汉字，公式、图表和定理环境采用按章编号，便于课堂引用与勘误维护。
+
+\begin{definition}[函数]
+设 $D$ 与 $Y$ 是两个非空集合。若按照某一对应法则 $f$，对每一个 $x\in D$，都有唯一的 $y\in Y$ 与之对应，则称 $f$ 为从 $D$ 到 $Y$ 的函数，记作
+\[
+  f:D\to Y,\qquad y=f(x).
+\]
+其中 $D$ 称为定义域，$y$ 称为 $x$ 在 $f$ 下的函数值。
+\end{definition}
+
+\begin{example}
+函数 $f(x)=x^2$ 将实数集 $\R$ 映到非负实数集。若限定定义域为 $[0,\infty)$，则它在该区间上单调递增。
+\end{example}
+
+\section{数列极限}
+
+\begin{definition}[数列极限]
+设 $\{a_n\}$ 为实数列，$A\in\R$。若对任意 $\varepsilon>0$，存在正整数 $N$，使得当 $n>N$ 时有
+\begin{equation}
+  |a_n-A|<\varepsilon,
+  \label{eq:sequence-limit}
+\end{equation}
+则称数列 $\{a_n\}$ 收敛于 $A$，记作 $\lim_{n\to\infty}a_n=A$。
+\end{definition}
+
+\begin{theorem}[收敛数列的唯一性]
+若数列 $\{a_n\}$ 收敛，则其极限唯一。
+\end{theorem}
+
+\begin{proof}
+设 $\lim_{n\to\infty}a_n=A$ 且 $\lim_{n\to\infty}a_n=B$。对任意 $\varepsilon>0$，存在 $N_1,N_2$，使得当 $n>\max\{N_1,N_2\}$ 时，
+\[
+  |a_n-A|<\frac{\varepsilon}{2},\qquad |a_n-B|<\frac{\varepsilon}{2}.
+\]
+由三角不等式得
+\[
+  |A-B|\le |A-a_n|+|a_n-B|<\varepsilon.
+\]
+由于 $\varepsilon$ 任意，故 $A=B$。
+\end{proof}
+
+由 \cref{eq:sequence-limit} 可见，极限定义的核心是“充分靠后”与“任意精度”的配合。
+
+\section{图形与表格}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[scale=.9]
+    \draw[->] (-.4,0) -- (5.2,0) node[right] {$x$};
+    \draw[->] (0,-.3) -- (0,3.4) node[above] {$y$};
+    \draw[cntbRed,line width=1pt,domain=.15:4.7,samples=100] plot(\x,{ln(\x)+1});
+    \draw[dashed,cntbGray] (1,0) -- (1,1);
+    \node[below] at (1,0) {$1$};
+    \node[left] at (0,1) {$1$};
+  \end{tikzpicture}
+  \caption{对数函数曲线示意}
+  \label{fig:log-curve}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{常见初等函数的性质}
+  \label{tab:functions}
+  \begin{tabular}{lll}
+    \toprule
+    函数 & 定义域 & 主要性质 \\
+    \midrule
+    $x^n$ & $\R$ 或子区间 & 幂函数，奇偶性由 $n$ 决定 \\
+    $\e^x$ & $\R$ & 正值、严格递增 \\
+    $\ln x$ & $(0,\infty)$ & 严格递增，过点 $(1,0)$ \\
+    $\sin x$ & $\R$ & 周期为 $2\pi$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{本章习题}
+
+\begin{exercise}
+用 $\varepsilon$-$N$ 语言证明 $\lim_{n\to\infty}\frac{1}{n}=0$。
+\end{exercise}
+
+\begin{exercise}
+判断函数 $f(x)=x+\frac{1}{x}$ 在 $(0,\infty)$ 上的单调区间。
+\end{exercise}

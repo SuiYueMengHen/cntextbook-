@@ -1,0 +1,22 @@
+# Build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.lol
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.synctex.gz
+*.synctex\(busy\)
+*.fdb_latexmk
+*.fls
+*.xdv
+missfont.log
+
+# OS
+.DS_Store
+Thumbs.db
