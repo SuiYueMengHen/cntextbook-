@@ -52,3 +52,11 @@ xelatex main.tex
 ## 说明
 
 封面使用 TikZ 绘制，不依赖外部图片。整体色彩以黑、灰、米白为主，并使用少量朱砂色作出版物识别点缀。实际出版前，请按目标出版社要求补充版权页、CIP 数据、责任编辑、印张、字数、定价、版次、印次等信息。
+
+## Project Status
+
+This repository is maintained as part of SuiYueMengHen's open-source project collection. Issues and suggestions are welcome.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
